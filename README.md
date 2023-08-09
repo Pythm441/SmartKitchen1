@@ -15,5 +15,5 @@ These app is using Siri and OpenAI Chat-GPT API to deliver high-end UI (user int
 Awadh AlMansoori   
 Mohamed Alkhateeb   
 Hesham Fakoush  
-Abdulrahman Mutawa
+Abdulrahman Metawea
 
