@@ -8,7 +8,7 @@ You can get Smart Chef at Appstore for free
 
 ## Overall
 
-These app is using Siri and OpenAI Chat-GPT API to deliver high-end UI (user inter face)
+These app is using [spoonacular API](https://spoonacular.com/food-api)
 
 ## Contributing
 
