@@ -11,6 +11,7 @@
 		683A239A2A83899600B47F25 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 683A23992A83899600B47F25 /* ContentView.swift */; };
 		683A239C2A83899700B47F25 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 683A239B2A83899700B47F25 /* Assets.xcassets */; };
 		683A239F2A83899700B47F25 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 683A239E2A83899700B47F25 /* Preview Assets.xcassets */; };
+		684C1DC32A9212F100D589F2 /* HomeScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 684C1DC22A9212F100D589F2 /* HomeScreen.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -19,6 +20,7 @@
 		683A23992A83899600B47F25 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		683A239B2A83899700B47F25 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		683A239E2A83899700B47F25 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		684C1DC22A9212F100D589F2 /* HomeScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeScreen.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,10 +53,12 @@
 		683A23962A83899600B47F25 /* SmartKitchen */ = {
 			isa = PBXGroup;
 			children = (
+				684C1DC42A92167600D589F2 /* Assets */,
 				683A23972A83899600B47F25 /* SmartKitchenApp.swift */,
 				683A23992A83899600B47F25 /* ContentView.swift */,
 				683A239B2A83899700B47F25 /* Assets.xcassets */,
 				683A239D2A83899700B47F25 /* Preview Content */,
+				684C1DC22A9212F100D589F2 /* HomeScreen.swift */,
 			);
 			path = SmartKitchen;
 			sourceTree = "<group>";
@@ -65,6 +69,13 @@
 				683A239E2A83899700B47F25 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		684C1DC42A92167600D589F2 /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Assets;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -139,6 +150,7 @@
 			files = (
 				683A239A2A83899600B47F25 /* ContentView.swift in Sources */,
 				683A23982A83899600B47F25 /* SmartKitchenApp.swift in Sources */,
+				684C1DC32A9212F100D589F2 /* HomeScreen.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
