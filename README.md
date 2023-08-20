@@ -10,10 +10,10 @@ You can get Smart Chef at Appstore for free
 
 These app is using [spoonacular API](https://spoonacular.com/food-api)
 
-## Contributing
+## Contributing           ROLEs
 
-Awadh AlMansoori   
-Mohamed Alkhateeb   
-Hesham Fakoush  
-Abdulrahman Metawea
+Awadh AlMansoori           logic / UI developer
+Mohamed Alkhateeb           Designer
+Hesham Fakoush              UI programmer and designer
+Abdulrahman Metawea         logic / UI developer
 
