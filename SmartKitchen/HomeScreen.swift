@@ -11,7 +11,7 @@ struct HomeScreen: View {
     var body: some View {
         VStack{
             HStack{
-               
+               Image("logo")
             }
             HStack{
                 
