@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		336445672A9231F300641496 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 336445662A9231F300641496 /* HomeView.swift */; };
+		336445692A92324C00641496 /* FavoritesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 336445682A92324C00641496 /* FavoritesView.swift */; };
+		3364456B2A92326D00641496 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3364456A2A92326D00641496 /* SettingsView.swift */; };
+		3364456D2A92344F00641496 /* TabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3364456C2A92344F00641496 /* TabBar.swift */; };
+		336445732A92436A00641496 /* RecipeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 336445722A92436A00641496 /* RecipeModel.swift */; };
 		683A23982A83899600B47F25 /* SmartKitchenApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 683A23972A83899600B47F25 /* SmartKitchenApp.swift */; };
 		683A239A2A83899600B47F25 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 683A23992A83899600B47F25 /* ContentView.swift */; };
 		683A239C2A83899700B47F25 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 683A239B2A83899700B47F25 /* Assets.xcassets */; };
@@ -14,6 +19,11 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		336445662A9231F300641496 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		336445682A92324C00641496 /* FavoritesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesView.swift; sourceTree = "<group>"; };
+		3364456A2A92326D00641496 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		3364456C2A92344F00641496 /* TabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBar.swift; sourceTree = "<group>"; };
+		336445722A92436A00641496 /* RecipeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeModel.swift; sourceTree = "<group>"; };
 		683A23942A83899600B47F25 /* SmartKitchen.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SmartKitchen.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		683A23972A83899600B47F25 /* SmartKitchenApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SmartKitchenApp.swift; sourceTree = "<group>"; };
 		683A23992A83899600B47F25 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -32,6 +42,58 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		336445642A92317E00641496 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				336445652A9231B800641496 /* Main */,
+				336445702A92390A00641496 /* Detail */,
+				336445712A92392300641496 /* Components */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		336445652A9231B800641496 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				683A23992A83899600B47F25 /* ContentView.swift */,
+				336445662A9231F300641496 /* HomeView.swift */,
+				336445682A92324C00641496 /* FavoritesView.swift */,
+				3364456A2A92326D00641496 /* SettingsView.swift */,
+				3364456C2A92344F00641496 /* TabBar.swift */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
+		3364456E2A92387E00641496 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				336445722A92436A00641496 /* RecipeModel.swift */,
+				683A239B2A83899700B47F25 /* Assets.xcassets */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		3364456F2A9238DD00641496 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		336445702A92390A00641496 /* Detail */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Detail;
+			sourceTree = "<group>";
+		};
+		336445712A92392300641496 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
 		683A238B2A83899600B47F25 = {
 			isa = PBXGroup;
 			children = (
@@ -52,8 +114,9 @@
 			isa = PBXGroup;
 			children = (
 				683A23972A83899600B47F25 /* SmartKitchenApp.swift */,
-				683A23992A83899600B47F25 /* ContentView.swift */,
-				683A239B2A83899700B47F25 /* Assets.xcassets */,
+				336445642A92317E00641496 /* Views */,
+				3364456F2A9238DD00641496 /* ViewModels */,
+				3364456E2A92387E00641496 /* Models */,
 				683A239D2A83899700B47F25 /* Preview Content */,
 			);
 			path = SmartKitchen;
@@ -137,6 +200,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				336445732A92436A00641496 /* RecipeModel.swift in Sources */,
+				3364456B2A92326D00641496 /* SettingsView.swift in Sources */,
+				336445692A92324C00641496 /* FavoritesView.swift in Sources */,
+				336445672A9231F300641496 /* HomeView.swift in Sources */,
+				3364456D2A92344F00641496 /* TabBar.swift in Sources */,
 				683A239A2A83899600B47F25 /* ContentView.swift in Sources */,
 				683A23982A83899600B47F25 /* SmartKitchenApp.swift in Sources */,
 			);
