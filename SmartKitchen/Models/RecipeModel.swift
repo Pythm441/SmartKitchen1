@@ -20,7 +20,7 @@ struct Response: Codable {
 }
 
 struct myResults: Codable {
-    let id : Int
+    let id : UInt
     let title : String
     let image : String
     let imageType : String
