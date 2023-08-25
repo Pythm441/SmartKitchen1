@@ -12,6 +12,7 @@
 		3364456B2A92326D00641496 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3364456A2A92326D00641496 /* SettingsView.swift */; };
 		3364456D2A92344F00641496 /* TabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3364456C2A92344F00641496 /* TabBar.swift */; };
 		336445732A92436A00641496 /* RecipeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 336445722A92436A00641496 /* RecipeModel.swift */; };
+		3364457B2A985B6300641496 /* ApiTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3364457A2A985B6300641496 /* ApiTest.swift */; };
 		683A23982A83899600B47F25 /* SmartKitchenApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 683A23972A83899600B47F25 /* SmartKitchenApp.swift */; };
 		683A239A2A83899600B47F25 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 683A23992A83899600B47F25 /* ContentView.swift */; };
 		683A239C2A83899700B47F25 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 683A239B2A83899700B47F25 /* Assets.xcassets */; };
@@ -25,6 +26,7 @@
 		3364456A2A92326D00641496 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		3364456C2A92344F00641496 /* TabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBar.swift; sourceTree = "<group>"; };
 		336445722A92436A00641496 /* RecipeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeModel.swift; sourceTree = "<group>"; };
+		3364457A2A985B6300641496 /* ApiTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiTest.swift; sourceTree = "<group>"; };
 		683A23942A83899600B47F25 /* SmartKitchen.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SmartKitchen.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		683A23972A83899600B47F25 /* SmartKitchenApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SmartKitchenApp.swift; sourceTree = "<group>"; };
 		683A23992A83899600B47F25 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -92,6 +94,7 @@
 		336445712A92392300641496 /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				3364457A2A985B6300641496 /* ApiTest.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -214,6 +217,7 @@
 			files = (
 				336445732A92436A00641496 /* RecipeModel.swift in Sources */,
 				3364456B2A92326D00641496 /* SettingsView.swift in Sources */,
+				3364457B2A985B6300641496 /* ApiTest.swift in Sources */,
 				336445692A92324C00641496 /* FavoritesView.swift in Sources */,
 				336445672A9231F300641496 /* HomeView.swift in Sources */,
 				3364456D2A92344F00641496 /* TabBar.swift in Sources */,
