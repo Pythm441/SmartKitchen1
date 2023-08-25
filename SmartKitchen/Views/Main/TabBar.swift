@@ -4,32 +4,40 @@
 //
 //  Created by Awadh AlMansoori on 20/08/2023.
 //
-
 import SwiftUI
 
 struct TabBar: View {
+    @State private var selectedTab = 1
+
     var body: some View {
-        TabView{
+        TabView(selection: $selectedTab) {
+            
             SettingsView()
                 .tabItem {
-                    Label("Settings", systemImage : "gear")
+                    Image(systemName: "gear")
+                    Text("Settings")
                 }
+                .tag(0)
             
             HomeView()
                 .tabItem {
-                    Label("Home", systemImage : "house")
+                    Image(systemName: "house")
+                    Text("Home")
                 }
+                .tag(1)
             
             FavoritesView()
                 .tabItem {
-                    Label("Favorites", systemImage : "heart")
+                    Image(systemName: "star")
+                    Text("Favorites")
                 }
+
         }
     }
 }
 
-struct TabBar_Previews: PreviewProvider {
+struct TabBar_previews: PreviewProvider {
     static var previews: some View {
-        TabBar()
+        ContentView()
     }
 }
