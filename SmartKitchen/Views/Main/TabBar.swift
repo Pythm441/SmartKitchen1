@@ -30,10 +30,7 @@ struct TabBar: View {
                     Image(systemName: "star")
                     Text("Favorites")
                 }
-                .tag(2)
-        }
-        .onAppear {
-            selectedTab = 1 
+
         }
     }
 }
