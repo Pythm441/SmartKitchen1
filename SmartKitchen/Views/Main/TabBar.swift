@@ -11,6 +11,7 @@ struct TabBar: View {
 
     var body: some View {
         TabView(selection: $selectedTab) {
+            
             SettingsView()
                 .tabItem {
                     Image(systemName: "gear")
