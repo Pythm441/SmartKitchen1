@@ -10,18 +10,46 @@ import SwiftUI
 struct HomeView: View {
     var body: some View {
         NavigationView {
-            
-            NavigationLink("Meals") {
-                MealsView()
+            VStack{
+                VStack {
+                    NavigationLink(destination: MealsView()) {
+                        Image("Meal.i")
+                    }
+                    Text("Meals")
+                        .font(.system(.title3))
+                }
+                .padding()
+                
+                VStack {
+                    NavigationLink(destination: DrinksView()) {
+                        Image("Drink.i")
+                    }
+                  Text("Drinks")
+                        .font(.system(.title3))
+                }
+                .padding()
+                
+                VStack {
+                    NavigationLink(destination: DessertView()) {
+                        Image("Dessert.i")
+                    }
+                    Text("Dessert")
+                    .font(.system(.title3))
+                        
+                }
+                .padding()
             }
             .navigationTitle("Home")
-            .buttonStyle(.bordered)
+               
+                .font(.system(.largeTitle))
+                .foregroundColor(.black)
+        }
+    }
+    
+    struct HomeView_Previews: PreviewProvider {
+        static var previews: some View {
+            HomeView()
         }
     }
 }
 
-struct HomeView_Previews: PreviewProvider {
-    static var previews: some View {
-        HomeView()
-    }
-}
