@@ -11,9 +11,11 @@ struct HomeView: View {
     var body: some View {
         NavigationView {
             
-            Text("Home")
-                    .navigationTitle("Home")
-  
+            NavigationLink("Meals") {
+                MealsView()
+            }
+            .navigationTitle("Home")
+            .buttonStyle(.bordered)
         }
     }
 }
