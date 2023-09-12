@@ -11,28 +11,44 @@ struct HomeView: View {
     var body: some View {
         NavigationView {
             VStack{
-                NavigationLink("Meals") {
-                    MealsView()
-                }.padding()
+                VStack {
+                    NavigationLink(destination: MealsView()) {
+                        Image("Meal.i")
+                    }
+                    Text("Meals")
+                        .font(.system(.title3))
+                }
+                .padding()
                 
-                NavigationLink("Drinks") {
-                    DrinksView()
-                }.padding()
+                VStack {
+                    NavigationLink(destination: DrinksView()) {
+                        Image("Drink.i")
+                    }
+                  Text("Drinks")
+                        .font(.system(.title3))
+                }
+                .padding()
                 
-                NavigationLink("Dessert") {
-                    DessertView()
-                }.font(.system(.title))
-                    .padding()
-            }.navigationTitle("Home")
-                .buttonStyle(.bordered)
+                VStack {
+                    NavigationLink(destination: DessertView()) {
+                        Image("Dessert.i")
+                    }
+                    Text("Dessert")
+                    .font(.system(.title3))
+                        
+                }
+                .padding()
+            }
+            .navigationTitle("Home")
+               
                 .font(.system(.largeTitle))
                 .foregroundColor(.black)
         }
     }
-}
-
-struct HomeView_Previews: PreviewProvider {
-    static var previews: some View {
-        HomeView()
+    
+    struct HomeView_Previews: PreviewProvider {
+        static var previews: some View {
+            HomeView()
+        }
     }
 }

@@ -8,10 +8,23 @@
 import SwiftUI
 
 struct SettingsView: View {
+    @State private var isDarkModeEnabled = false
+
     var body: some View {
         NavigationView {
-            Text("Settings")
-                .navigationTitle("Settings")
+            List {
+                Section(header: Text("Settings")) {
+                NavigationLink("Edit profile", destination: HomeView())
+                    NavigationLink("Change password", destination: HomeView())
+                    NavigationLink("Time schedule", destination: HomeView())
+                    NavigationLink("Accessibility", destination: HomeView())
+                }
+                
+                Section(header: Text("Appearance")) {
+                    Toggle("Dark Mode", isOn: $isDarkModeEnabled)
+                }
+            }
+            .navigationBarTitle("Settings")
         }
     }
 }
