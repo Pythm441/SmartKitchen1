@@ -12,6 +12,7 @@ struct DrinksView: View {
         NavigationView {
             VStack{
                 VStack {
+                    Text("Drinks")
                     NavigationLink(destination: ColdDView()) {
                         Image("ColdD.i")
                     }
@@ -28,11 +29,8 @@ struct DrinksView: View {
                         .font(.system(.title3))
                 }
                 .padding()
-                
-                .padding()
             }
-            .navigationTitle("Drinks")
-            
+            .offset(y: -30)
             .font(.system(.largeTitle))
             .foregroundColor(.black)
         }

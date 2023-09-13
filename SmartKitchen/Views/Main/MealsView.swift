@@ -12,13 +12,15 @@ struct MealsView: View {
         NavigationView {
             VStack{
                 VStack {
+                    Text("Meals")
+                        
                     NavigationLink(destination: BreakFastView()) {
                         Image("Break.i")
                     }
                     Text("Breakfast")
                         .font(.system(.title3))
                 }
-                .padding()
+                
                 
                 VStack {
                     NavigationLink(destination: LunchView()) {
@@ -28,19 +30,16 @@ struct MealsView: View {
                         .font(.system(.title3))
                 }
                 .padding()
-                
                 VStack {
                     NavigationLink(destination: DinnerView()) {
                         Image("Dinner.i")
                     }
                     Text("Dinner")
                         .font(.system(.title3))
-                    
+                        
                 }
-                .padding()
             }
-            .navigationTitle("Meals")
-            
+            .offset(y: -30)
             .font(.system(.largeTitle))
             .foregroundColor(.black)
         }
