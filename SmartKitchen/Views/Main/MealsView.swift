@@ -9,7 +9,7 @@ import SwiftUI
 
 struct MealsView: View {
     var body: some View {
-        NavigationView {
+ 
             VStack{
                 VStack {
                     Text("Meals")
@@ -50,4 +50,4 @@ struct MealsView: View {
             MealsView()
         }
     }
-}
+

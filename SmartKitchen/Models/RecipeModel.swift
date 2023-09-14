@@ -7,9 +7,9 @@
 
 import Foundation
 import SwiftUI
-
+@MainActor
 class ApiModel: ObservableObject {
-    let apiURL = URL(string: "https://api.spoonacular.com/recipes/complexSearch?apiKey=3dcc7436a1dd43e1a71b267740fafacc")!
+    let apiURL = URL(string: "https://api.spoonacular.com/recipes/complexSearch?apiKey=126b8c8d1d264eb1a4e79d3316e4add1")!
     @Published var api : API1?
     @Published var api2: [API2] = []
     func getapi() {
@@ -20,7 +20,7 @@ class ApiModel: ObservableObject {
             print(String(data: data, encoding: .utf8)!)
            try await MainActor.run {
                 self.api = try JSONDecoder().decode(API1.self, from: data)
-               
+            
                print("----------")
                print(api?.results ?? 1)
                print("===========")
@@ -36,8 +36,17 @@ class ApiModel: ObservableObject {
         }
         
     }
-    
+    func search(name: String) async {
+        do {
+        let foods = try await Webservice().getFood(searchTerm: name)
+            //self.foods = foods.map(FoodViewModel.init)
+        } catch {
+            print(error)
+        }
+    }
 }
+    
+
 
 struct API1 : Codable {
     var results : [API2]

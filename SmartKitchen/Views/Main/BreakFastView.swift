@@ -6,17 +6,33 @@
 //
 
 import SwiftUI
+import Foundation
 
 struct BreakFastView: View {
-    @State private var API = ""
+    @StateObject var apiModel = ApiModel()
+    @State private var searchText: String = ""
     var body: some View {
-        
-        VStack{
-            Text("BreakFast")
+        NavigationView{
+            List(apiModel.api2, id: \.id) { food in
+                Text(food.title)
                 
+            }
+            
+                .listStyle(.plain)
+                .searchable(text: $searchText)
+                .onChange(of: searchText) { value in
+                    Task.init {
+                        if !value .isEmpty && value.count > 3 {
+                            await apiModel.search(name: "Milk")
+                            print(value)
+                           try await print(Webservice().getFood(searchTerm: "Water"))
+                        } else {
+                            apiModel.api2.removeAll()
+                        }
+                    }
+                }
+                .navigationTitle("BreakFast")
         }
-        .navigationTitle("Breakfast")
-        .searchable(text: $API)
     }
     
     struct BreakFastView_Previews: PreviewProvider {
