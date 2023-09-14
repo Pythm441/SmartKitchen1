@@ -12,8 +12,7 @@ struct BreakFastView: View {
     var body: some View {
         
         VStack{
-            Text("BreakFast")
-                
+            Text("A")
         }
         .navigationTitle("Breakfast")
         .searchable(text: $API)
