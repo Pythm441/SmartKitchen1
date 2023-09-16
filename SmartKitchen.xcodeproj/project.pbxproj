@@ -13,6 +13,7 @@
 		3364456D2A92344F00641496 /* TabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3364456C2A92344F00641496 /* TabBar.swift */; };
 		336445732A92436A00641496 /* RecipeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 336445722A92436A00641496 /* RecipeModel.swift */; };
 		3364457B2A985B6300641496 /* ApiTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3364457A2A985B6300641496 /* ApiTest.swift */; };
+		338EEDF92AB40C22009B293D /* Webservice.swift in Sources */ = {isa = PBXBuildFile; fileRef = 338EEDF82AB40C22009B293D /* Webservice.swift */; };
 		33BF537D2AB0976400D524CA /* MealsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33BF537C2AB0976400D524CA /* MealsView.swift */; };
 		33BF537F2AB09B3500D524CA /* DessertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33BF537E2AB09B3500D524CA /* DessertView.swift */; };
 		33BF53812AB09B6200D524CA /* DrinksView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33BF53802AB09B6200D524CA /* DrinksView.swift */; };
@@ -36,6 +37,8 @@
 		3364456C2A92344F00641496 /* TabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBar.swift; sourceTree = "<group>"; };
 		336445722A92436A00641496 /* RecipeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeModel.swift; sourceTree = "<group>"; };
 		3364457A2A985B6300641496 /* ApiTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiTest.swift; sourceTree = "<group>"; };
+		338EEDF82AB40C22009B293D /* Webservice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Webservice.swift; sourceTree = "<group>"; };
+		338EEDFE2AB4654C009B293D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		33BF537C2AB0976400D524CA /* MealsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealsView.swift; sourceTree = "<group>"; };
 		33BF537E2AB09B3500D524CA /* DessertView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DessertView.swift; sourceTree = "<group>"; };
 		33BF53802AB09B6200D524CA /* DrinksView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrinksView.swift; sourceTree = "<group>"; };
@@ -99,6 +102,7 @@
 		3364456F2A9238DD00641496 /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
+				338EEDF82AB40C22009B293D /* Webservice.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -178,6 +182,7 @@
 		683A23962A83899600B47F25 /* SmartKitchen */ = {
 			isa = PBXGroup;
 			children = (
+				338EEDFE2AB4654C009B293D /* Info.plist */,
 				684C1DC42A92167600D589F2 /* Assets */,
 				683A23972A83899600B47F25 /* SmartKitchenApp.swift */,
 				336445642A92317E00641496 /* Views */,
@@ -281,6 +286,7 @@
 				3364457B2A985B6300641496 /* ApiTest.swift in Sources */,
 				336445692A92324C00641496 /* FavoritesView.swift in Sources */,
 				336445672A9231F300641496 /* HomeView.swift in Sources */,
+				338EEDF92AB40C22009B293D /* Webservice.swift in Sources */,
 				3364456D2A92344F00641496 /* TabBar.swift in Sources */,
 				5411B4792AB2008900CC5BE9 /* LunchView.swift in Sources */,
 				683A239A2A83899600B47F25 /* ContentView.swift in Sources */,
@@ -423,6 +429,7 @@
 				DEVELOPMENT_TEAM = 5N95MW8788;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = SmartKitchen/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -452,6 +459,7 @@
 				DEVELOPMENT_TEAM = 5N95MW8788;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = SmartKitchen/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
