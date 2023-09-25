@@ -21,8 +21,15 @@ struct RecipeDetails: View {
     var body: some View {
         VStack {
             if let recipeData = recipeData {
-                Text("Selected Item ID: \(selectedItemID)")
-                // Display other recipe details here using `recipeData`
+                AsyncImage(url: URL(string: "https://cdn-icons-png.flaticon.com/512/5277/5277377.png")) { image in
+                            image
+                                .resizable()
+                                .aspectRatio(contentMode: .fill)
+                                
+                        } placeholder: {
+                            Color.gray
+                        }
+                
             } else {
                 ProgressView("Loading...")
             }
