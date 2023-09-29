@@ -2,21 +2,42 @@ import SwiftUI
 
 struct BreakfastView: View {
     @State private var api: API1?
-    @State private var api2: [API2] = []
-    @State private var api3: API3?
-    @State private var api4: [API4] = []
     @State private var resultsx: [String] = []
     @State private var resultsx1: [String] = []
     @State private var searchText: String = ""
     @State private var showAlert = false // State variable to control the alert
+    let selectedItemID: Int
+    @State private var recipeDetails: API4?
+    
+    func fetchRecipeDetails() {
+            // Construct the URL with selectedItemID
+            let apiKey = "ad6054d5e93147fca5c0a1f473f3efa6"
+            guard let apiURL = URL(string: "https://api.spoonacular.com/recipes/\(selectedItemID)/card?apiKey=\(apiKey)") else {
+                return // Handle the case where the URL is invalid
+            }
+            
+            Task {
+                do {
+                    let (data, _) = try await URLSession.shared.data(from: apiURL)
+                    self.recipeDetails = try JSONDecoder().decode(API4.self, from: data)
+                } catch {
+                    print("Error fetching recipe details: \(error)")
+                }
+            }
+        }
     
     var body: some View {
         List {
             ForEach(resultsx, id: \.self) { item in
-                NavigationLink(destination: RecipeDetails(selectedItemID: Int(resultsx1[resultsx.firstIndex(of: item)!]) ?? 0)) {
-                    Text(item)
+                if let index = resultsx.firstIndex(of: item), index < resultsx1.count {
+                    NavigationLink(destination: RecipeDetails(selectedItemID: Int(resultsx1[index]) ?? 0)) {
+                        Text(item)
+                    }
                 }
             }
+        }
+        .onAppear{
+            fetchRecipeDetails()
         }
         .listStyle(.plain)
         .searchable(text: $searchText)
@@ -38,10 +59,10 @@ struct BreakfastView: View {
     }
     
     private func performAPISearch(query: String) {
-        // Replace with your actual API key
-        let apiKey = "3dcc7436a1dd43e1a71b267740fafacc"
+        // Replace with your actual API key, and consider a more secure storage option
+        let apiKey = "ad6054d5e93147fca5c0a1f473f3efa6"
         guard let searchQuery = query.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed),
-              let apiURL = URL(string: "https://api.spoonacular.com/recipes/complexSearch?apiKey=\(apiKey)&query=\(searchQuery)") else {
+              let apiURL = URL(string: "https://api.spoonacular.com/recipes/complexSearch?apiKey=\(apiKey)&query=\(searchQuery)")else {
             showAlert = true // Display the alert
             return // Exit the function
         }
@@ -58,21 +79,23 @@ struct BreakfastView: View {
                     print("The array is empty or nil.")
                 }
                 
-                self.api2 = try JSONDecoder().decode([API2].self, from: data)
-                self.api3 = try JSONDecoder().decode(API3.self, from: data)
-                self.api4 = try JSONDecoder().decode([API4].self, from: data)
-                
-                print("---------------------")
-                print(api4)
             } catch {
                 print("Error: \(error)")
+                showAlert = true // Display the alert for API request errors
             }
+            
+
+            
         }
     }
+    
+    
+    
 }
+
 struct BreakfastView_Previews: PreviewProvider {
     static var previews: some View {
-        BreakfastView()
+        BreakfastView(selectedItemID: 123)
     }
 }
 
@@ -98,6 +121,5 @@ struct API3: Codable {
 }
 
 struct API4: Hashable, Codable {
-    var id: Int
-    var title: String
+    var url: String
 }
