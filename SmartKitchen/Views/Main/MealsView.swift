@@ -14,7 +14,7 @@ struct MealsView: View {
                 VStack {
                     Text("Meals")
                         
-                    NavigationLink(destination: BreakfastView(resultsx3: "", selectedItemID: 123)) {
+                    NavigationLink(destination:         BreakfastView(selectedItemID: 123)) {
                         Image("Break.i")
                     }
                     Text("Breakfast")
