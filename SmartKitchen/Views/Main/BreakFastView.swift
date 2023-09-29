@@ -7,34 +7,9 @@ struct BreakfastView: View {
     @State private var resultsx3: String = ""
     @State private var searchText: String = ""
     @State private var showAlert = false // State variable to control the alert
-    let selectedItemID: Int
-    @State private var recipeDetails: API4?
+    @State private var selectedItemId: Int? // Store the selected item ID
     
-    func fetchRecipeDetails(selectedItemID: Int) {
-        // Construct the URL with selectedItemID
-        let apiKey = "ad6054d5e93147fca5c0a1f473f3efa6"
-        guard let apiURL = URL(string: "https://api.spoonacular.com/recipes/\(selectedItemID)/card?apiKey=\(apiKey)") else {
-            return // Handle the case where the URL is invalid
-        }
-        
-        Task {
-            do {
-                let (data, _) = try await URLSession.shared.data(from: apiURL)
-                self.recipeDetails = try JSONDecoder().decode(API4.self, from: data)
-                
-                let results2 = recipeDetails?.url
-                print(results2 ?? "errorss")
-                
-                if let results2 = results2 {
-                    resultsx3 = results2
-                    print(resultsx3)
-                }
-                
-            } catch {
-                print("Error fetching recipe details: \(error)")
-            }
-        }
-    }
+    @State private var recipeDetails: API4?
     
     var body: some View {
         List {
@@ -43,8 +18,17 @@ struct BreakfastView: View {
                     let selectedItemId = Int(resultsx1[index]) ?? 0
                     
                     // Use resultsx3 directly for imageUrl
-                    NavigationLink(destination: RecipeDetails(selectedItemID: selectedItemId, imageUrl: resultsx3)) {
+                    NavigationLink(destination: RecipeDetails(selectedItemID: selectedItemId, imageUrl: recipeDetails?.url ?? "")) {
                         Text(resultsx[index])
+                    }
+                    .onTapGesture {
+                        // Store the selected item ID
+                        self.selectedItemId = selectedItemId
+                        print("Taped")
+                        
+                        // Call the function to fetch recipe details
+                         fetchRecipeDetails(selectedItemID: selectedItemId)
+                        print(recipeDetails?.url ?? "")
                     }
                 }
             }
@@ -54,13 +38,12 @@ struct BreakfastView: View {
         .onChange(of: searchText) { value in
             if !value.isEmpty && value.count > 3 {
                 performAPISearch(query: value)
-                fetchRecipeDetails(selectedItemID: selectedItemID)
             } else {
                 resultsx.removeAll()
             }
         }
         .onAppear() {
-            
+            // Additional setup code if needed
         }
         .navigationTitle("Breakfast")
         .alert(isPresented: $showAlert) {
@@ -76,7 +59,7 @@ struct BreakfastView: View {
         // Replace with your actual API key, and consider a more secure storage option
         let apiKey = "ad6054d5e93147fca5c0a1f473f3efa6"
         guard let searchQuery = query.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed),
-              let apiURL = URL(string: "https://api.spoonacular.com/recipes/complexSearch?apiKey=\(apiKey)&query=\(searchQuery)")else {
+              let apiURL = URL(string: "https://api.spoonacular.com/recipes/complexSearch?apiKey=\(apiKey)&query=\(searchQuery)") else {
             showAlert = true // Display the alert
             return // Exit the function
         }
@@ -99,11 +82,40 @@ struct BreakfastView: View {
             }
         }
     }
+    
+    private func fetchRecipeDetails(selectedItemID: Int) {
+        // Construct the URL with selectedItemID
+        let apiKey = "ad6054d5e93147fca5c0a1f473f3efa6"
+        
+        guard let apiURL = URL(string: "https://api.spoonacular.com/recipes/\(selectedItemID)/card?apiKey=\(apiKey)") else {
+            return
+        }
+        
+        Task {
+            do {
+                let (data, _) = try await URLSession.shared.data(from: apiURL)
+                self.recipeDetails = try JSONDecoder().decode(API4.self, from: data)
+                print(data)
+                
+                let results2 = recipeDetails?.url
+                print(recipeDetails?.url ?? "A")
+                
+                
+                
+                //resultsx3 = results2 ?? "A"
+                // print(resultsx3 ?? "ollop")
+                
+            } catch {
+                print("Error fetching recipe details: \(error)")
+            }
+        }
+        
+    }
 }
 
 struct BreakfastView_Previews: PreviewProvider {
     static var previews: some View {
-        BreakfastView(selectedItemID: 123) // Remove the 'resultsx3' argument
+        BreakfastView()
     }
 }
 
