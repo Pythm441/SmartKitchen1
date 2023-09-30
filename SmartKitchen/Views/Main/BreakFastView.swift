@@ -1,7 +1,7 @@
 import SwiftUI
 
-struct BreakfastView: View {
-    @State private var api: API1?
+struct breakfastView: View {
+    @State private var api: API1_Breakfast?
     @State private var resultsx: [String] = []
     @State private var resultsx1: [String] = []
     @State private var searchText: String = ""
@@ -15,20 +15,9 @@ struct BreakfastView: View {
                         let selectedItemId = Int(resultsx1[index]) ?? 0
                         
                         // Use resultsx3 directly for imageUrl
-                        NavigationLink(destination: RecipeDetails(selectedItemID: selectedItemId, imageUrl: "")) {
+                        NavigationLink(destination: RecipeDetails(selectedItemID: selectedItemId)) {
                             Text(resultsx[index])
-                            
-                            
                         }
-                    }
-                    .onTapGesture {
-                        // Store the selected item ID
-                        self.selectedItemId = selectedItemId
-                        print("Taped")
-                        
-                        // Call the function to fetch recipe details
-                         fetchRecipeDetails(selectedItemID: selectedItemId)
-                        print(recipeDetails?.url ?? "")
                     }
                 }
             }
@@ -59,7 +48,7 @@ struct BreakfastView: View {
         // Replace with your actual API key, and consider a more secure storage option
         let apiKey = "126b8c8d1d264eb1a4e79d3316e4add1"
         guard let searchQuery = query.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed),
-              let apiURL = URL(string: "https://api.spoonacular.com/recipes/complexSearch?apiKey=\(apiKey)&query=\(searchQuery)") else {
+              let apiURL = URL(string: "https://api.spoonacular.com/recipes/complexSearch?apiKey=\(apiKey)&query=\(searchQuery)&type=breakfast") else {
             showAlert = true // Display the alert
             return // Exit the function
         }
@@ -67,7 +56,7 @@ struct BreakfastView: View {
         Task {
             do {
                 let (data, _) = try await URLSession.shared.data(from: apiURL)
-                self.api = try JSONDecoder().decode(API1.self, from: data)
+                self.api = try JSONDecoder().decode(API1_Breakfast.self, from: data)
                 
                 if let results1 = api?.results {
                     resultsx = results1.map { $0.title }
@@ -82,51 +71,17 @@ struct BreakfastView: View {
             }
         }
     }
-    
-    private func fetchRecipeDetails(selectedItemID: Int) {
-        // Construct the URL with selectedItemID
-        let apiKey = "ad6054d5e93147fca5c0a1f473f3efa6"
-        
-        guard let apiURL = URL(string: "https://api.spoonacular.com/recipes/\(selectedItemID)/card?apiKey=\(apiKey)") else {
-            return
-        }
-        
-        Task {
-            do {
-                let (data, _) = try await URLSession.shared.data(from: apiURL)
-                self.recipeDetails = try JSONDecoder().decode(API4.self, from: data)
-                print(data)
-                
-                let results2 = recipeDetails?.url
-                print(recipeDetails?.url ?? "A")
-                
-                
-                
-                //resultsx3 = results2 ?? "A"
-                // print(resultsx3 ?? "ollop")
-                
-            } catch {
-                print("Error fetching recipe details: \(error)")
-            }
-        }
-        
-    }
 }
 
-struct BreakfastView_Previews: PreviewProvider {
-    static var previews: some View {
-        BreakfastView()
-    }
-}
 
-struct API1: Codable {
-    var results: [API2]
+struct API1_Breakfast: Codable {
+    var results: [API2_Breakfast]
     var offset: Int
     var number: Int
     var totalResults: Int
 }
 
-struct API2: Hashable, Codable {
+struct API2_Breakfast: Hashable, Codable {
     var id: Int
     var title: String
     var image: URL

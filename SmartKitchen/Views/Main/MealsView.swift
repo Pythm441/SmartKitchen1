@@ -14,7 +14,7 @@ struct MealsView: View {
                 VStack {
                     Text("Meals")
                         
-                    NavigationLink(destination:         BreakfastView()) {
+                    NavigationLink(destination:         breakfastView()) {
                         Image("Break.i")
                     }
                     Text("Breakfast")
