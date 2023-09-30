@@ -4,22 +4,22 @@ struct BreakfastView: View {
     @State private var api: API1?
     @State private var resultsx: [String] = []
     @State private var resultsx1: [String] = []
-    @State private var resultsx3: String = ""
     @State private var searchText: String = ""
     @State private var showAlert = false // State variable to control the alert
-    @State private var selectedItemId: Int? // Store the selected item ID
-    
-    @State private var recipeDetails: API4?
-    
+
     var body: some View {
-        List {
-            ForEach(resultsx.indices, id: \.self) { index in
-                if index < resultsx1.count {
-                    let selectedItemId = Int(resultsx1[index]) ?? 0
-                    
-                    // Use resultsx3 directly for imageUrl
-                    NavigationLink(destination: RecipeDetails(selectedItemID: selectedItemId, imageUrl: recipeDetails?.url ?? "")) {
-                        Text(resultsx[index])
+        NavigationView {
+            List {
+                ForEach(resultsx.indices, id: \.self) { index in
+                    if index < resultsx1.count {
+                        let selectedItemId = Int(resultsx1[index]) ?? 0
+                        
+                        // Use resultsx3 directly for imageUrl
+                        NavigationLink(destination: RecipeDetails(selectedItemID: selectedItemId, imageUrl: "")) {
+                            Text(resultsx[index])
+                            
+                            
+                        }
                     }
                     .onTapGesture {
                         // Store the selected item ID
@@ -32,32 +32,32 @@ struct BreakfastView: View {
                     }
                 }
             }
-        }
-        .listStyle(.plain)
-        .searchable(text: $searchText)
-        .onChange(of: searchText) { value in
-            if !value.isEmpty && value.count > 3 {
-                performAPISearch(query: value)
-            } else {
-                resultsx.removeAll()
+            .listStyle(.plain)
+            .searchable(text: $searchText)
+            .onChange(of: searchText) { value in
+                if !value.isEmpty && value.count > 3 {
+                    performAPISearch(query: value)
+                } else {
+                    resultsx.removeAll()
+                }
             }
-        }
-        .onAppear() {
-            // Additional setup code if needed
-        }
-        .navigationTitle("Breakfast")
-        .alert(isPresented: $showAlert) {
-            Alert(
-                title: Text("Invalid URL"),
-                message: Text("The URL for the API request is invalid. Please try again."),
-                dismissButton: .default(Text("OK"))
-            )
+            .onAppear() {
+                // Additional setup code if needed
+            }
+            .navigationTitle("Breakfast")
+            .alert(isPresented: $showAlert) {
+                Alert(
+                    title: Text("Invalid URL"),
+                    message: Text("The URL for the API request is invalid. Please try again."),
+                    dismissButton: .default(Text("OK"))
+                )
+            }
         }
     }
     
     private func performAPISearch(query: String) {
         // Replace with your actual API key, and consider a more secure storage option
-        let apiKey = "ad6054d5e93147fca5c0a1f473f3efa6"
+        let apiKey = "126b8c8d1d264eb1a4e79d3316e4add1"
         guard let searchQuery = query.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed),
               let apiURL = URL(string: "https://api.spoonacular.com/recipes/complexSearch?apiKey=\(apiKey)&query=\(searchQuery)") else {
             showAlert = true // Display the alert
@@ -133,6 +133,4 @@ struct API2: Hashable, Codable {
     var imageType: String
 }
 
-struct API4: Hashable, Codable {
-    var url: String
-}
+
