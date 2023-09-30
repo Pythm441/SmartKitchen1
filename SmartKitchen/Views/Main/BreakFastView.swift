@@ -15,20 +15,9 @@ struct BreakfastView: View {
                         let selectedItemId = Int(resultsx1[index]) ?? 0
                         
                         // Use resultsx3 directly for imageUrl
-                        NavigationLink(destination: RecipeDetails(selectedItemID: selectedItemId, imageUrl: "")) {
+                        NavigationLink(destination: RecipeDetails(selectedItemID: selectedItemId)) {
                             Text(resultsx[index])
-                            
-                            
                         }
-                    }
-                    .onTapGesture {
-                        // Store the selected item ID
-                        self.selectedItemId = selectedItemId
-                        print("Taped")
-                        
-                        // Call the function to fetch recipe details
-                         fetchRecipeDetails(selectedItemID: selectedItemId)
-                        print(recipeDetails?.url ?? "")
                     }
                 }
             }
@@ -82,42 +71,8 @@ struct BreakfastView: View {
             }
         }
     }
-    
-    private func fetchRecipeDetails(selectedItemID: Int) {
-        // Construct the URL with selectedItemID
-        let apiKey = "ad6054d5e93147fca5c0a1f473f3efa6"
-        
-        guard let apiURL = URL(string: "https://api.spoonacular.com/recipes/\(selectedItemID)/card?apiKey=\(apiKey)") else {
-            return
-        }
-        
-        Task {
-            do {
-                let (data, _) = try await URLSession.shared.data(from: apiURL)
-                self.recipeDetails = try JSONDecoder().decode(API4.self, from: data)
-                print(data)
-                
-                let results2 = recipeDetails?.url
-                print(recipeDetails?.url ?? "A")
-                
-                
-                
-                //resultsx3 = results2 ?? "A"
-                // print(resultsx3 ?? "ollop")
-                
-            } catch {
-                print("Error fetching recipe details: \(error)")
-            }
-        }
-        
-    }
 }
 
-struct BreakfastView_Previews: PreviewProvider {
-    static var previews: some View {
-        BreakfastView()
-    }
-}
 
 struct API1: Codable {
     var results: [API2]
