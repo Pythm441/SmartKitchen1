@@ -38,8 +38,8 @@ struct RecipeDetails: View {
     }
 
     func fetchRecipeDetails(selectedItemID: Int) {
-        let apiKey = "126b8c8d1d264eb1a4e79d3316e4add1"
-        guard let apiURL = URL(string: "https://api.spoonacular.com/recipes/\(selectedItemID)/card?apiKey=\(apiKey)") else {
+        
+        guard let apiURL = URL(string: "https://api.spoonacular.com/recipes/\(selectedItemID)/card?apiKey=\(apiKey ?? "")") else {
             return
         }
         

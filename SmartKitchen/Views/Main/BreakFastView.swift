@@ -46,9 +46,9 @@ struct breakfastView: View {
     
     private func performAPISearch(query: String) {
         // Replace with your actual API key, and consider a more secure storage option
-        let apiKey = "126b8c8d1d264eb1a4e79d3316e4add1"
+
         guard let searchQuery = query.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed),
-              let apiURL = URL(string: "https://api.spoonacular.com/recipes/complexSearch?apiKey=\(apiKey)&query=\(searchQuery)&type=breakfast") else {
+              let apiURL = URL(string: "https://api.spoonacular.com/recipes/complexSearch?apiKey=\(apiKey ?? "")&query=\(searchQuery)&type=breakfast") else {
             showAlert = true // Display the alert
             return // Exit the function
         }
@@ -61,6 +61,7 @@ struct breakfastView: View {
                 if let results1 = api?.results {
                     resultsx = results1.map { $0.title }
                     resultsx1 = results1.map { String($0.id) }
+                    
                 } else {
                     print("The array is empty or nil.")
                 }

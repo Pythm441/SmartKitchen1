@@ -52,9 +52,9 @@ struct DrinksView: View {
     
     private func performAPISearch(query: String) {
         // Replace with your actual API key, and consider a more secure storage option
-        let apiKey = "126b8c8d1d264eb1a4e79d3316e4add1"
+        
         guard let searchQuery = query.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed),
-              let apiURL = URL(string: "https://api.spoonacular.com/recipes/complexSearch?apiKey=\(apiKey)&query=\(searchQuery)&type=beverage") else {
+              let apiURL = URL(string: "https://api.spoonacular.com/recipes/complexSearch?apiKey=\(apiKey ?? "")&query=\(searchQuery)&type=beverage") else {
             showAlert = true // Display the alert
             return // Exit the function
         }
