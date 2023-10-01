@@ -21,6 +21,7 @@ struct RecipeDetails: View {
                         .resizable()
                         .aspectRatio(contentMode: .fill) // Stretch and fill the screen
                         .frame(maxWidth: .infinity, maxHeight: .infinity)
+                        .scaledToFit()
                         
                         
                         
