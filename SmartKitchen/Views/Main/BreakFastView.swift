@@ -1,7 +1,7 @@
 import SwiftUI
 
-struct BreakfastView: View {
-    @State private var api: API1?
+struct breakfastView: View {
+    @State private var api: API1_Breakfast?
     @State private var resultsx: [String] = []
     @State private var resultsx1: [String] = []
     @State private var searchText: String = ""
@@ -46,9 +46,9 @@ struct BreakfastView: View {
     
     private func performAPISearch(query: String) {
         // Replace with your actual API key, and consider a more secure storage option
-        let apiKey = "126b8c8d1d264eb1a4e79d3316e4add1"
+
         guard let searchQuery = query.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed),
-              let apiURL = URL(string: "https://api.spoonacular.com/recipes/complexSearch?apiKey=\(apiKey)&query=\(searchQuery)") else {
+              let apiURL = URL(string: "https://api.spoonacular.com/recipes/complexSearch?apiKey=\(apiKey ?? "")&query=\(searchQuery)&type=breakfast") else {
             showAlert = true // Display the alert
             return // Exit the function
         }
@@ -56,11 +56,12 @@ struct BreakfastView: View {
         Task {
             do {
                 let (data, _) = try await URLSession.shared.data(from: apiURL)
-                self.api = try JSONDecoder().decode(API1.self, from: data)
+                self.api = try JSONDecoder().decode(API1_Breakfast.self, from: data)
                 
                 if let results1 = api?.results {
                     resultsx = results1.map { $0.title }
                     resultsx1 = results1.map { String($0.id) }
+                    
                 } else {
                     print("The array is empty or nil.")
                 }
@@ -74,14 +75,14 @@ struct BreakfastView: View {
 }
 
 
-struct API1: Codable {
-    var results: [API2]
+struct API1_Breakfast: Codable {
+    var results: [API2_Breakfast]
     var offset: Int
     var number: Int
     var totalResults: Int
 }
 
-struct API2: Hashable, Codable {
+struct API2_Breakfast: Hashable, Codable {
     var id: Int
     var title: String
     var image: URL

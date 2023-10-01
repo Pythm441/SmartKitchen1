@@ -14,8 +14,7 @@ struct SettingsView: View {
         NavigationView {
             List {
                 Section(header: Text("Settings")) {
-                NavigationLink("Edit profile", destination: HomeView())
-                    NavigationLink("Change password", destination: HomeView())
+
                     NavigationLink("Time schedule", destination: HomeView())
                     NavigationLink("Accessibility", destination: HomeView())
                 }
