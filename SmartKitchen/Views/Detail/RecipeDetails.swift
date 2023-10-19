@@ -15,37 +15,39 @@ struct RecipeDetails: View {
     
     
     var body: some View {
-        ScrollView{
+       // ScrollView{
+        
             VStack {
-                if let imageUrl = recipeDetails?.url {
-                    AsyncImage(url: URL(string: imageUrl)) { image in
-                        image
-                            .resizable()
-                            .scaledToFit()
-                            .scaleEffect(scale)
-                            .gesture(MagnificationGesture()
-                                .onChanged{value in
-                                    scale = value.magnitude
-                                    
-                                }
-                            )
-                            
-                        
-                        
-                        
-                        
-                    } placeholder: {
-                        ProgressView()
-                    }
-                } else {
-                    ProgressView()
-                        .onAppear {
-                            fetchRecipeDetails(selectedItemID: selectedItemID)
+                ZStack {
+                    Color.blue
+                    if let imageUrl = recipeDetails?.url {
+                        AsyncImage(url: URL(string: imageUrl)) { image in
+                            image
+                                .resizable() // Make the image resizable.
+                                .aspectRatio(contentMode: .fit) // Fill the screen while preserving aspect ratio.
+                                .frame(maxWidth: .infinity, maxHeight: .infinity)
+                                .clipped() // Clip the overflowing parts.
+                                .gesture(MagnificationGesture()
+                                    .onChanged { value in
+                                        scale = value.magnitude
+                                    }
+                                )
+                        } placeholder: {
+                            ProgressView()
                         }
+                    } else {
+                        ProgressView()
+                            .onAppear {
+                                fetchRecipeDetails(selectedItemID: selectedItemID)
+                            }
+                    }
                 }
             }
         }
-    }
+
+
+        
+   // }
         
 
     func fetchRecipeDetails(selectedItemID: Int) {
