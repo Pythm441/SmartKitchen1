@@ -11,31 +11,44 @@ struct RecipeDetails: View {
     let selectedItemID: Int
     @State private var recipeDetails: API4?
     @State var imageUrl = "imagez"
+    @State private var scale: CGFloat = 1.0
     
     
     var body: some View {
-        VStack {
-            if let imageUrl = recipeDetails?.url {
-                AsyncImage(url: URL(string: imageUrl)) { image in
-                    image
-                        .resizable()
-                        .aspectRatio(contentMode: .fill) // Stretch and fill the screen
-                        .frame(maxWidth: .infinity, maxHeight: .infinity)
-                        .scaledToFit()
-                        
-                        
-                        
-                } placeholder: {
-                    ProgressView()
-                }
-            } else {
-                ProgressView()
-                    .onAppear {
-                        fetchRecipeDetails(selectedItemID: selectedItemID)
+       // ScrollView{
+        
+            VStack {
+                ZStack {
+                    Color.blue
+                    if let imageUrl = recipeDetails?.url {
+                        AsyncImage(url: URL(string: imageUrl)) { image in
+                            image
+                                .resizable() // Make the image resizable.
+                                .aspectRatio(contentMode: .fit) // Fill the screen while preserving aspect ratio.
+                                .frame(maxWidth: .infinity, maxHeight: .infinity)
+                                .clipped() // Clip the overflowing parts.
+                                .gesture(MagnificationGesture()
+                                    .onChanged { value in
+                                        scale = value.magnitude
+                                    }
+                                )
+                        } placeholder: {
+                            ProgressView()
+                        }
+                    } else {
+                        ProgressView()
+                            .onAppear {
+                                fetchRecipeDetails(selectedItemID: selectedItemID)
+                            }
                     }
+                }
             }
         }
-    }
+
+
+        
+   // }
+        
 
     func fetchRecipeDetails(selectedItemID: Int) {
         
