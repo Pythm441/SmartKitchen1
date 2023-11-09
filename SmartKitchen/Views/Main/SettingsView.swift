@@ -8,7 +8,8 @@
 import SwiftUI
 
 struct SettingsView: View {
-    @State private var isDarkModeEnabled = false
+   
+    @EnvironmentObject var themeSettings: ThemeSettings
 
     var body: some View {
         NavigationView {
@@ -20,7 +21,7 @@ struct SettingsView: View {
                 }
                 
                 Section(header: Text("Appearance")) {
-                    Toggle("Dark Mode", isOn: $isDarkModeEnabled)
+                    Toggle("Dark Mode", isOn: $themeSettings.isDarkMode)
                 }
             }
             .navigationBarTitle("Settings")
