@@ -28,6 +28,7 @@
 		683A239C2A83899700B47F25 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 683A239B2A83899700B47F25 /* Assets.xcassets */; };
 		683A239F2A83899700B47F25 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 683A239E2A83899700B47F25 /* Preview Assets.xcassets */; };
 		684C1DC62A92182600D589F2 /* logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 684C1DC52A92182600D589F2 /* logo.png */; };
+		6872C3472AFF878F00E85EE9 /* ThemeSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6872C3462AFF878F00E85EE9 /* ThemeSettings.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -54,6 +55,7 @@
 		683A239B2A83899700B47F25 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		683A239E2A83899700B47F25 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		684C1DC52A92182600D589F2 /* logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logo.png; sourceTree = "<group>"; };
+		6872C3462AFF878F00E85EE9 /* ThemeSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeSettings.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -86,6 +88,7 @@
 				3364456A2A92326D00641496 /* SettingsView.swift */,
 				3364456C2A92344F00641496 /* TabBar.swift */,
 				33BF537B2AB096EE00D524CA /* SubViews */,
+				6872C3462AFF878F00E85EE9 /* ThemeSettings.swift */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -283,6 +286,7 @@
 				336445732A92436A00641496 /* RecipeModel.swift in Sources */,
 				33BF537F2AB09B3500D524CA /* DessertView.swift in Sources */,
 				3364456B2A92326D00641496 /* SettingsView.swift in Sources */,
+				6872C3472AFF878F00E85EE9 /* ThemeSettings.swift in Sources */,
 				3364457B2A985B6300641496 /* ApiTest.swift in Sources */,
 				336445692A92324C00641496 /* FavoritesView.swift in Sources */,
 				336445672A9231F300641496 /* HomeView.swift in Sources */,
