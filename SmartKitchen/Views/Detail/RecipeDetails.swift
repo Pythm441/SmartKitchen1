@@ -20,10 +20,10 @@ struct RecipeDetails: View {
             VStack {
                 ZStack {
                     Image("Blur")
-                                    .resizable()
-                                    .scaledToFill()
-                                    .frame(maxWidth: .infinity, maxHeight: .infinity)
-                                    .clipped()
+                                .resizable()
+                                .scaledToFill()
+                                .frame(maxWidth: .infinity, maxHeight: .infinity)
+                                .clipped()
                     if let imageUrl = recipeDetails?.url {
                         AsyncImage(url: URL(string: imageUrl)) { image in
                             image
