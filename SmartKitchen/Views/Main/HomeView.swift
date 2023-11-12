@@ -42,7 +42,7 @@ struct HomeView: View {
             .navigationTitle("Home")
                
                 .font(.system(.largeTitle))
-                .foregroundColor(.black)
+                .foregroundColor(.primary)
         }
     }
     
