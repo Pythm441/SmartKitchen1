@@ -27,7 +27,7 @@ struct FavoritesView: View {
                         }
                         padding()
                     }
-                    
+
                 }
                 .alert(isPresented: $showAlert) {
                     Alert(title: Text("Error"), message: Text("Failed to fetch recipes. Please try again."), dismissButton: .default(Text("OK")))
