@@ -41,7 +41,7 @@ struct MealsView: View {
             }
             .offset(y: -30)
             .font(.system(.largeTitle))
-            .foregroundColor(.black)
+            .foregroundColor(.primary)
         }
     }
     

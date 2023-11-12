@@ -28,7 +28,7 @@ struct FavoritesView: View {
                         padding()
                     }
                     HStack {
-                        if resultsx[0] == nil
+                        
                     }
                 }
                 .alert(isPresented: $showAlert) {
