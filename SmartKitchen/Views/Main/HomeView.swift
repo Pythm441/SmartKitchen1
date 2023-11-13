@@ -13,7 +13,7 @@ struct HomeView: View {
             VStack{
                 VStack {
                     NavigationLink(destination: MealsView()) {
-                        Image("Meal.i")
+                        Image("Meals.ii")
                     }
                     Text("Meals")
                         .font(.system(.title3))

@@ -17,7 +17,7 @@ struct Splash: View {
             ZStack {
                 
                 if showImage {
-                    Image("NewLogo")
+                    Image("MyLogo")
                         .resizable()
                         .scaledToFit()
                         .scaleEffect(showImage ? 1.5 : 1.0)
