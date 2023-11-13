@@ -94,6 +94,21 @@
                   endingLineNumber = "63"
                   offsetFromSymbolStart = "1488">
                </Location>
+               <Location
+                  uuid = "19710221-B124-43FF-B927-3C8DA2C60BC9 - b685fb595504d557"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(3) suspend resume partial function for closure #1 @Sendable () async -&gt; () in SmartKitchen.FavoritesView.performAPISearch(cal: Swift.String) -&gt; ()"
+                  moduleName = "SmartKitchen"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/awadh/Documents/SmartKitchen5f/SmartKitchen/Views/Main/FavoritesView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "62"
+                  endingLineNumber = "62"
+                  offsetFromSymbolStart = "1076">
+               </Location>
             </Locations>
          </BreakpointContent>
       </BreakpointProxy>
