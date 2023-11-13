@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct DessertView: View {
+    @EnvironmentObject var themeSettings: ThemeSettings
     @State private var api: API1_dessert?
     @State private var resultsx: [String] = []
     @State private var resultsx1: [String] = []
@@ -17,7 +18,7 @@ struct DessertView: View {
     var body: some View {
         NavigationView {
             ZStack{
-                Image("MyLogo") // Assuming "MyLogo.png" is in your asset catalog
+                Image(themeSettings.isDarkMode == true ? "MyLogo2" : "MyLogo") // Assuming "MyLogo.png" and "MyLogo2.png" are system image names
                     .resizable()
                     .scaledToFit()
                     .frame(maxWidth: .infinity, maxHeight: .infinity)

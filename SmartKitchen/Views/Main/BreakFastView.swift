@@ -1,6 +1,7 @@
 import SwiftUI
 
 struct breakfastView: View {
+    @EnvironmentObject var themeSettings: ThemeSettings
     @State private var api: API1_Breakfast?
     @State private var resultsx: [String] = []
     @State private var resultsx1: [String] = []
@@ -10,22 +11,21 @@ struct breakfastView: View {
     var body: some View {
         NavigationView {
             ZStack{
-                Image("MyLogo") // Assuming "MyLogo.png" is in your asset catalog
-                                    .resizable()
-                                    .scaledToFit()
-                                    .frame(maxWidth: .infinity, maxHeight: .infinity)
-                                    .edgesIgnoringSafeArea(.all)
-                                    .opacity(0.3) // Adjust the opacity as needed
-                                    .background(
-                                        Color.clear // Set the background color to clear to allow the content to be visible
-                                    )
-                                    .alignmentGuide(HorizontalAlignment.center) { d in
-                                        d[HorizontalAlignment.center]
-                                    }
-                                    .alignmentGuide(VerticalAlignment.center) { d in
-                                        d[VerticalAlignment.center]
-                                    }
-
+                    Image(themeSettings.isDarkMode == true ? "MyLogo2" : "MyLogo") // Assuming "MyLogo.png" and "MyLogo2.png" are system image names
+                        .resizable()
+                        .scaledToFit()
+                        .frame(maxWidth: .infinity, maxHeight: .infinity)
+                        .edgesIgnoringSafeArea(.all)
+                        .opacity(0.3) // Adjust the opacity as needed
+                        .background(
+                            Color.clear // Set the background color to clear to allow the content to be visible
+                        )
+                        .alignmentGuide(HorizontalAlignment.center) { d in
+                            d[HorizontalAlignment.center]
+                        }
+                        .alignmentGuide(VerticalAlignment.center) { d in
+                            d[VerticalAlignment.center]
+                        }
                 List {
                     ForEach(resultsx.indices, id: \.self) { index in
                         if index < resultsx1.count {
