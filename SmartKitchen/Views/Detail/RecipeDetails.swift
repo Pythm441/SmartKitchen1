@@ -60,7 +60,7 @@ struct RecipeDetails: View {
             return
         }
         
-        Task {
+        Task{
             do {
                 let (data, _) = try await URLSession.shared.data(from: apiURL)
                 let decodedRecipeDetails = try JSONDecoder().decode(API4.self, from: data)

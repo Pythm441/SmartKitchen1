@@ -8,8 +8,7 @@ struct SettingsView: View {
         NavigationView {
             List {
                 Section(header: Text("Settings")) {
-                    NavigationLink("Time schedule", destination: HomeView())
-                    NavigationLink("Accessibility", destination: HomeView())
+                    NavigationLink("Time schedule", destination: Schedule())
                 }
                 
                 Section(header: Text("Appearance")) {

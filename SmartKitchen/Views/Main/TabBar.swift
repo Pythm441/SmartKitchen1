@@ -1,10 +1,16 @@
-//
-//  TabBar.swift
-//  SmartKitchen
-//
-//  Created by Awadh AlMansoori on 20/08/2023.
-//
 import SwiftUI
+
+struct CustomTabBarItem: View {
+    let systemImage: String
+    let text: String
+
+    var body: some View {
+        VStack {
+            Image(systemName: systemImage)
+            Text(text)
+        }
+    }
+}
 
 struct TabBar: View {
     @State private var selectedTab = 1
@@ -20,25 +26,21 @@ struct TabBar: View {
             TabView(selection: $selectedTab) {
                 SettingsView()
                     .tabItem {
-                        Image(systemName: "gear")
-                        Text("Settings")
+                        CustomTabBarItem(systemImage: "gear", text: "Settings")
                     }
                     .tag(0)
-                
+
                 HomeView()
                     .tabItem {
-                        Image(systemName: "house")
-                        Text("Home")
+                        CustomTabBarItem(systemImage: "house", text: "Home")
                     }
                     .tag(1)
-                
+
                 FavoritesView()
                     .tabItem {
-                        Image(systemName: "star")
-                        Text("Favorites")
+                        CustomTabBarItem(systemImage: "calendar", text: "Planner")
                     }
                     .tag(2)
-                
             }
         }
     }
@@ -46,6 +48,6 @@ struct TabBar: View {
 
 struct TabBar_previews: PreviewProvider {
     static var previews: some View {
-        ContentView()
+        TabBar()
     }
 }
