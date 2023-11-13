@@ -7,6 +7,7 @@
 import SwiftUI
 
 struct DrinksView: View {
+    @EnvironmentObject var themeSettings: ThemeSettings
     @State private var api: API1_ColdD?
     @State private var resultsx: [String] = []
     @State private var resultsx1: [String] = []
@@ -15,37 +16,54 @@ struct DrinksView: View {
 
     var body: some View {
         NavigationView {
-            List {
-                ForEach(resultsx.indices, id: \.self) { index in
-                    if index < resultsx1.count {
-                        let selectedItemId = Int(resultsx1[index]) ?? 0
-                        
-                        // Use resultsx3 directly for imageUrl
-                        NavigationLink(destination: RecipeDetails(selectedItemID: selectedItemId)) {
-                            Text(resultsx[index])
+            ZStack{
+                Image(themeSettings.isDarkMode == true ? "MyLogo2" : "MyLogo") // Assuming "MyLogo.png" and "MyLogo2.png" are system image names
+                    .resizable()
+                    .scaledToFit()
+                    .frame(maxWidth: .infinity, maxHeight: .infinity)
+                    .edgesIgnoringSafeArea(.all)
+                    .opacity(0.3) // Adjust the opacity as needed
+                    .background(
+                        Color.clear // Set the background color to clear to allow the content to be visible
+                    )
+                    .alignmentGuide(HorizontalAlignment.center) { d in
+                        d[HorizontalAlignment.center]
+                    }
+                    .alignmentGuide(VerticalAlignment.center) { d in
+                        d[VerticalAlignment.center]
+                    }
+                List {
+                    ForEach(resultsx.indices, id: \.self) { index in
+                        if index < resultsx1.count {
+                            let selectedItemId = Int(resultsx1[index]) ?? 0
+                            
+                            // Use resultsx3 directly for imageUrl
+                            NavigationLink(destination: RecipeDetails(selectedItemID: selectedItemId)) {
+                                Text(resultsx[index])
+                            }
                         }
                     }
                 }
-            }
-            .listStyle(.plain)
-            .searchable(text: $searchText)
-            .onChange(of: searchText) { value in
-                if !value.isEmpty && value.count > 3 {
-                    performAPISearch(query: value)
-                } else {
-                    resultsx.removeAll()
+                .listStyle(.plain)
+                .searchable(text: $searchText)
+                .onChange(of: searchText) { value in
+                    if !value.isEmpty && value.count > 3 {
+                        performAPISearch(query: value)
+                    } else {
+                        resultsx.removeAll()
+                    }
                 }
-            }
-            .onAppear() {
-                // Additional setup code if needed
-            }
-            .navigationTitle("Drinks")
-            .alert(isPresented: $showAlert) {
-                Alert(
-                    title: Text("Invalid URL"),
-                    message: Text("The URL for the API request is invalid. Please try again."),
-                    dismissButton: .default(Text("OK"))
-                )
+                .onAppear() {
+                    // Additional setup code if needed
+                }
+                .navigationTitle("Drinks")
+                .alert(isPresented: $showAlert) {
+                    Alert(
+                        title: Text("Invalid URL"),
+                        message: Text("The URL for the API request is invalid. Please try again."),
+                        dismissButton: .default(Text("OK"))
+                    )
+                }
             }
         }
     }
