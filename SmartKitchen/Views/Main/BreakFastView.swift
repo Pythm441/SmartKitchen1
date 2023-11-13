@@ -9,37 +9,55 @@ struct breakfastView: View {
 
     var body: some View {
         NavigationView {
-            List {
-                ForEach(resultsx.indices, id: \.self) { index in
-                    if index < resultsx1.count {
-                        let selectedItemId = Int(resultsx1[index]) ?? 0
-                        
-                        // Use resultsx3 directly for imageUrl
-                        NavigationLink(destination: RecipeDetails(selectedItemID: selectedItemId)) {
-                            Text(resultsx[index])
+            ZStack{
+                Image("MyLogo") // Assuming "MyLogo.png" is in your asset catalog
+                                    .resizable()
+                                    .scaledToFit()
+                                    .frame(maxWidth: .infinity, maxHeight: .infinity)
+                                    .edgesIgnoringSafeArea(.all)
+                                    .opacity(0.3) // Adjust the opacity as needed
+                                    .background(
+                                        Color.clear // Set the background color to clear to allow the content to be visible
+                                    )
+                                    .alignmentGuide(HorizontalAlignment.center) { d in
+                                        d[HorizontalAlignment.center]
+                                    }
+                                    .alignmentGuide(VerticalAlignment.center) { d in
+                                        d[VerticalAlignment.center]
+                                    }
+
+                List {
+                    ForEach(resultsx.indices, id: \.self) { index in
+                        if index < resultsx1.count {
+                            let selectedItemId = Int(resultsx1[index]) ?? 0
+                            
+                            // Use resultsx3 directly for imageUrl
+                            NavigationLink(destination: RecipeDetails(selectedItemID: selectedItemId)) {
+                                Text(resultsx[index])
+                            }
                         }
                     }
                 }
-            }
-            .listStyle(.plain)
-            .searchable(text: $searchText)
-            .onChange(of: searchText) { value in
-                if !value.isEmpty && value.count > 3 {
-                    performAPISearch(query: value)
-                } else {
-                    resultsx.removeAll()
+                .listStyle(.plain)
+                .searchable(text: $searchText)
+                .onChange(of: searchText) { value in
+                    if !value.isEmpty && value.count > 3 {
+                        performAPISearch(query: value)
+                    } else {
+                        resultsx.removeAll()
+                    }
                 }
-            }
-            .onAppear() {
-                // Additional setup code if needed
-            }
-            .navigationTitle("Breakfast")
-            .alert(isPresented: $showAlert) {
-                Alert(
-                    title: Text("Invalid URL"),
-                    message: Text("The URL for the API request is invalid. Please try again."),
-                    dismissButton: .default(Text("OK"))
-                )
+                .onAppear() {
+                    // Additional setup code if needed
+                }
+                .navigationTitle("Breakfast")
+                .alert(isPresented: $showAlert) {
+                    Alert(
+                        title: Text("Invalid URL"),
+                        message: Text("The URL for the API request is invalid. Please try again."),
+                        dismissButton: .default(Text("OK"))
+                    )
+                }
             }
         }
     }
