@@ -8,7 +8,7 @@
 import SwiftUI
 
 @main
-struct SmartKitchenApp: App { // I don't know what the f&#k is thiss error!! fix it if you can!
+struct SmartKitchenApp: App {
     @StateObject private var themeSettings = ThemeSettings()
     @StateObject private var viewModel = AppViewModel()
     
