@@ -28,7 +28,7 @@
 		683A239C2A83899700B47F25 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 683A239B2A83899700B47F25 /* Assets.xcassets */; };
 		683A239F2A83899700B47F25 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 683A239E2A83899700B47F25 /* Preview Assets.xcassets */; };
 		684C1DC62A92182600D589F2 /* logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 684C1DC52A92182600D589F2 /* logo.png */; };
-		685B123D2B014DEE00C5271D /* schdeule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 685B123C2B014DEE00C5271D /* schdeule.swift */; };
+		686316502B03B8F900E2E961 /* Scheduler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6863164F2B03B8F900E2E961 /* Scheduler.swift */; };
 		6872C3472AFF878F00E85EE9 /* ThemeSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6872C3462AFF878F00E85EE9 /* ThemeSettings.swift */; };
 /* End PBXBuildFile section */
 
@@ -56,7 +56,7 @@
 		683A239B2A83899700B47F25 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		683A239E2A83899700B47F25 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		684C1DC52A92182600D589F2 /* logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logo.png; sourceTree = "<group>"; };
-		685B123C2B014DEE00C5271D /* schdeule.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = schdeule.swift; sourceTree = "<group>"; };
+		6863164F2B03B8F900E2E961 /* Scheduler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Scheduler.swift; sourceTree = "<group>"; };
 		6872C3462AFF878F00E85EE9 /* ThemeSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeSettings.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -85,10 +85,10 @@
 			isa = PBXGroup;
 			children = (
 				683A23992A83899600B47F25 /* ContentView.swift */,
+				6863164F2B03B8F900E2E961 /* Scheduler.swift */,
 				336445662A9231F300641496 /* HomeView.swift */,
 				336445682A92324C00641496 /* FavoritesView.swift */,
 				3364456A2A92326D00641496 /* SettingsView.swift */,
-				685B123C2B014DEE00C5271D /* schdeule.swift */,
 				3364456C2A92344F00641496 /* TabBar.swift */,
 				33BF537B2AB096EE00D524CA /* SubViews */,
 				6872C3462AFF878F00E85EE9 /* ThemeSettings.swift */,
@@ -292,7 +292,6 @@
 				6872C3472AFF878F00E85EE9 /* ThemeSettings.swift in Sources */,
 				3364457B2A985B6300641496 /* ApiTest.swift in Sources */,
 				336445692A92324C00641496 /* FavoritesView.swift in Sources */,
-				685B123D2B014DEE00C5271D /* schdeule.swift in Sources */,
 				336445672A9231F300641496 /* HomeView.swift in Sources */,
 				338EEE022AB70E84009B293D /* RecipeDetails.swift in Sources */,
 				338EEDF92AB40C22009B293D /* Webservice.swift in Sources */,
@@ -300,6 +299,7 @@
 				5411B4792AB2008900CC5BE9 /* LunchView.swift in Sources */,
 				683A239A2A83899600B47F25 /* ContentView.swift in Sources */,
 				5411B47B2AB200AD00CC5BE9 /* DinnerView.swift in Sources */,
+				686316502B03B8F900E2E961 /* Scheduler.swift in Sources */,
 				33BF537D2AB0976400D524CA /* MealsView.swift in Sources */,
 				5411B4772AB2007500CC5BE9 /* BreakFastView.swift in Sources */,
 				33BF53812AB09B6200D524CA /* DrinksView.swift in Sources */,

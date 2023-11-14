@@ -52,7 +52,7 @@ struct FavoritesView: View {
                     dismissButton: .default(Text("OK"))
                 )
             }
-            .navigationTitle("Favorites")
+            .navigationTitle("Calories Saver")
         }
     }
 
