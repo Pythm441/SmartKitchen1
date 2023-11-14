@@ -20,7 +20,7 @@ struct FavoritesView: View {
             VStack {
                 HStack {
                     Spacer() // Add Spacer to push the TextField and Button to the center
-                    TextField("e.g 2000", text: $cals)
+                    TextField("e.g 2000 Cal", text: $cals)
                         .textFieldStyle(RoundedBorderTextFieldStyle())
                     // Add a style to the TextField
                     Button("Search") {

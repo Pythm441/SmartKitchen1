@@ -38,7 +38,7 @@ struct DrinksView: View {
                             let selectedItemId = Int(resultsx1[index]) ?? 0
                             
                             // Use resultsx3 directly for imageUrl
-                            NavigationLink(destination: RecipeDetails(selectedItemID: selectedItemId)) {
+                            NavigationLink(destination: RecipeDetails4(selectedItemID: selectedItemId)) {
                                 Text(resultsx[index])
                             }
                         }

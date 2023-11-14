@@ -19,6 +19,9 @@
 		33BF537D2AB0976400D524CA /* MealsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33BF537C2AB0976400D524CA /* MealsView.swift */; };
 		33BF537F2AB09B3500D524CA /* DessertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33BF537E2AB09B3500D524CA /* DessertView.swift */; };
 		33BF53812AB09B6200D524CA /* DrinksView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33BF53802AB09B6200D524CA /* DrinksView.swift */; };
+		33C509952B03D4CD00A846A0 /* RecipeDetails2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33C509942B03D4CD00A846A0 /* RecipeDetails2.swift */; };
+		33C509972B03D53300A846A0 /* RecipeDetails3.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33C509962B03D53300A846A0 /* RecipeDetails3.swift */; };
+		33C509992B03D5B900A846A0 /* RecipeDetails4.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33C509982B03D5B900A846A0 /* RecipeDetails4.swift */; };
 		33D9AFA12A9A8D77000427E4 /* Splash.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33D9AFA02A9A8D77000427E4 /* Splash.swift */; };
 		5411B4772AB2007500CC5BE9 /* BreakFastView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5411B4762AB2007500CC5BE9 /* BreakFastView.swift */; };
 		5411B4792AB2008900CC5BE9 /* LunchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5411B4782AB2008900CC5BE9 /* LunchView.swift */; };
@@ -46,6 +49,9 @@
 		33BF537C2AB0976400D524CA /* MealsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealsView.swift; sourceTree = "<group>"; };
 		33BF537E2AB09B3500D524CA /* DessertView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DessertView.swift; sourceTree = "<group>"; };
 		33BF53802AB09B6200D524CA /* DrinksView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrinksView.swift; sourceTree = "<group>"; };
+		33C509942B03D4CD00A846A0 /* RecipeDetails2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeDetails2.swift; sourceTree = "<group>"; };
+		33C509962B03D53300A846A0 /* RecipeDetails3.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeDetails3.swift; sourceTree = "<group>"; };
+		33C509982B03D5B900A846A0 /* RecipeDetails4.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeDetails4.swift; sourceTree = "<group>"; };
 		33D9AFA02A9A8D77000427E4 /* Splash.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Splash.swift; sourceTree = "<group>"; };
 		5411B4762AB2007500CC5BE9 /* BreakFastView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BreakFastView.swift; sourceTree = "<group>"; };
 		5411B4782AB2008900CC5BE9 /* LunchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LunchView.swift; sourceTree = "<group>"; };
@@ -117,6 +123,9 @@
 			isa = PBXGroup;
 			children = (
 				338EEE012AB70E84009B293D /* RecipeDetails.swift */,
+				33C509942B03D4CD00A846A0 /* RecipeDetails2.swift */,
+				33C509962B03D53300A846A0 /* RecipeDetails3.swift */,
+				33C509982B03D5B900A846A0 /* RecipeDetails4.swift */,
 			);
 			path = Detail;
 			sourceTree = "<group>";
@@ -295,6 +304,7 @@
 				336445672A9231F300641496 /* HomeView.swift in Sources */,
 				338EEE022AB70E84009B293D /* RecipeDetails.swift in Sources */,
 				338EEDF92AB40C22009B293D /* Webservice.swift in Sources */,
+				33C509952B03D4CD00A846A0 /* RecipeDetails2.swift in Sources */,
 				3364456D2A92344F00641496 /* TabBar.swift in Sources */,
 				5411B4792AB2008900CC5BE9 /* LunchView.swift in Sources */,
 				683A239A2A83899600B47F25 /* ContentView.swift in Sources */,
@@ -305,6 +315,8 @@
 				33BF53812AB09B6200D524CA /* DrinksView.swift in Sources */,
 				33D9AFA12A9A8D77000427E4 /* Splash.swift in Sources */,
 				3349A4492AC99BBC002376E6 /* ApiKey.swift in Sources */,
+				33C509972B03D53300A846A0 /* RecipeDetails3.swift in Sources */,
+				33C509992B03D5B900A846A0 /* RecipeDetails4.swift in Sources */,
 				683A23982A83899600B47F25 /* SmartKitchenApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

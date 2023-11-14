@@ -39,7 +39,7 @@ struct DessertView: View {
                             let selectedItemId = Int(resultsx1[index]) ?? 0
                             
                             // Use resultsx3 directly for imageUrl
-                            NavigationLink(destination: RecipeDetails(selectedItemID: selectedItemId)) {
+                            NavigationLink(destination: RecipeDetails3(selectedItemID: selectedItemId)) {
                                 Text(resultsx[index])
                             }
                         }
